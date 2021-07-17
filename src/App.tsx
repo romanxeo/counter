@@ -6,7 +6,7 @@ import Inputer from "./Inputer";
 
 function App() {
 
-    let countM = 5;
+    let countM = 6;
     let countS = 0;
     let countC = 0;
 

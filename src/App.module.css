@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+
+  height: 100vh;
+  background-color: #282c34;
+
+}
+
+.Main {
+  width: 360px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: 3px solid #66a103;
+  border-radius: 10px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.Counter {
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
+  height: 100px;
+  background-color: #66a103;
+  border-radius: 10px;
+
+  color: #282c34;
+  padding-top: 30px;
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 36px;
+}
+
+.CounterMax {
+  color: #ff0000;
+  font-size: 40px;
+}
+
+.Button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #282c34;
+  color: #66a103;
+  border: 3px solid #66a103;
+  border-radius: 10px;
+  font-size: 21px;
+  transition: all 0.2s ease;
+  margin: 5px;
+  margin-top: 10px;
+  width: 155px;
+  height: 50px;
+}
+
+.Button:hover {
+  text-decoration: none;
+  background-color: #66a103;
+  color: #282c34;
+  border-color: #66a103;
+}
+
+.Button:disabled {
+  text-decoration: none;
+  background-color: #555;
+  color: #333;
+  border-color: #555;
+}
+
+.Button:active {
+  background-color: #80c904;
+  color: #282c34;
+  border-color: #80c904;
+}
+
+.Texter {
+  color: #66a103;
+  font-size: 20px;
+  margin: 24px;
+}

@@ -7,7 +7,7 @@ import Inputer from "./Inputer";
 function App() {
 
     const countS = 0;
-    const countM = 8;
+    const countM = 7;
     const countC = 0;
     const sw = true;
 

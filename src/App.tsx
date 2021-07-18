@@ -7,7 +7,7 @@ import Inputer from "./Inputer";
 function App() {
 
     const countS = 0;
-    const countM = 5;
+    const countM = 8;
     const countC = 0;
 
     let [countStart, setCountStart] = useState<number>(countS);

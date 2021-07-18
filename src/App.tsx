@@ -9,6 +9,7 @@ function App() {
     const countS = 0;
     const countM = 8;
     const countC = 0;
+    const sw = true;
 
     let [countStart, setCountStart] = useState<number>(countS);
     let [countMax, setCountMax] = useState<number>(countM);
@@ -17,6 +18,7 @@ function App() {
     let [StartCallback, setStartCallback] = useState<number>(countS);
     let [MaxCallback, setMaxCallback] = useState<number>(countM);
 
+    let [switcher, setSwitcher] = useState<boolean>(sw);
 
     useEffect(() => {
             let stringValueCountStart = localStorage.getItem('countStart')
@@ -37,8 +39,8 @@ function App() {
 
     const CountStartCallback = (vals: number) => {
         setStartCallback(vals)
-
     }
+
     const CountMaxCallback = (valm: number) => {
         setMaxCallback(valm)
     }
@@ -66,6 +68,57 @@ function App() {
     const reset = () => {
         setCountCurrent(countStart);
     }
+
+    const switcherFunc = () => {
+        setSwitcher(!switcher)
+    }
+
+    let switchContainer =
+        <div className={s.MainTwo}>
+            <Counter countCurrent={countCurrent}
+                     countMax={countMax}/>
+
+            <Button name={'ADD'}
+                    callback={addCount}
+                    countCurrent={countCurrent}
+                    countStart={countStart}
+                    countMax={countMax}/>
+
+            <Button name={'RESET'}
+                    callback={reset}
+                    countCurrent={countCurrent}
+                    countStart={countStart}
+                    countMax={countMax}/>
+
+            <Button name={'SETTINGS'}
+                    callback={switcherFunc}
+                    countCurrent={countCurrent}
+                    countStart={countStart}
+                    countMax={countMax}/>
+
+        </div>
+    if (!switcher) {
+        switchContainer =
+            <div className={s.MainTwo}>
+                <Inputer StartCallback={StartCallback}
+                         MaxCallback={MaxCallback}
+                         CountStartCallback={CountStartCallback}
+                         CountMaxCallback={CountMaxCallback}/>
+
+                <Button name={'SET'}
+                        callback={setCountAll}
+                        countCurrent={countCurrent}
+                        countStart={countStart}
+                        countMax={countMax}/>
+
+                <Button name={'COUNTER'}
+                        callback={switcherFunc}
+                        countCurrent={countCurrent}
+                        countStart={countStart}
+                        countMax={countMax}/>
+            </div>
+    }
+
 
     return (
         <body className={s.App}>
@@ -99,6 +152,12 @@ function App() {
                     countStart={countStart}
                     countMax={countMax}/>
         </div>
+
+
+        <hr/>
+
+        {switchContainer}
+
         </body>
     );
 }

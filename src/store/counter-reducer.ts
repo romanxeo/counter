@@ -84,17 +84,17 @@ export const counterReducer = (state: initialStateType = initialState, action: a
             copyState.countMax = copyState.MaxCallback
             if (copyState.countCurrent < copyState.StartCallback || copyState.countCurrent > copyState.MaxCallback) {
                 copyState.countCurrent = copyState.StartCallback
-
             }
 
-            //созранеям в локал стораж
+            /*//созранеям в локал стораж
             localStorage.setItem('countStart', JSON.stringify(copyState.StartCallback))
-            localStorage.setItem('countMax', JSON.stringify(copyState.MaxCallback))
+            localStorage.setItem('countMax', JSON.stringify(copyState.MaxCallback))*/
 
             return copyState
         }
         case 'GET-COUNT-ALL' : {
             let copyState = {...state}
+/*
             let stringValueCountStart = localStorage.getItem('countStart')
             if (stringValueCountStart) {
                 let numberValueCountStart = JSON.parse(stringValueCountStart)
@@ -109,7 +109,7 @@ export const counterReducer = (state: initialStateType = initialState, action: a
                 copyState.countMax = numberValueCountMax
                 copyState.MaxCallback = numberValueCountMax
             }
-
+*/
             return copyState
         }
         default:

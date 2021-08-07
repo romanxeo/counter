@@ -20,22 +20,25 @@ function AppWithRedux() {
     const count = useSelector<AppStateType, initialStateType>(state => state.counter)
     const dispatch = useDispatch()
 
+
+/*
     useEffect(() => {
         const action = getCountAll()
         dispatch(action)
     }, [])
+*/
 
-    const CountStartCallback = (vals: number) => {
+
+    const setCountStartFunc = (vals: number) => {
         const action = setCountStart(vals)
         dispatch(action)
     }
 
-    const CountMaxCallback = (valm: number) => {
+    const setCountMaxFunc = (valm: number) => {
         const action = setCountMax(valm)
         dispatch(action)
     }
 
-    //выставляем данные в основном стейте
     const setCountAllFunc = () => {
         const action = setCountAll()
         dispatch(action)
@@ -54,7 +57,6 @@ function AppWithRedux() {
     const switcherFunc = () => {
         const action = switcher()
         dispatch(action)
-
     }
 
 
@@ -88,8 +90,8 @@ function AppWithRedux() {
             <div className={s.MainTwo}>
                 <Inputer StartCallback={count.StartCallback}
                          MaxCallback={count.MaxCallback}
-                         CountStartCallback={CountStartCallback}
-                         CountMaxCallback={CountMaxCallback}/>
+                         CountStartCallback={setCountStartFunc}
+                         CountMaxCallback={setCountMaxFunc}/>
 
                 <Button name={'SET'}
                         callback={setCountAllFunc}
@@ -112,8 +114,8 @@ function AppWithRedux() {
         <div className={s.Main}>
             <Inputer StartCallback={count.StartCallback}
                      MaxCallback={count.MaxCallback}
-                     CountStartCallback={CountStartCallback}
-                     CountMaxCallback={CountMaxCallback}/>
+                     CountStartCallback={setCountStartFunc}
+                     CountMaxCallback={setCountMaxFunc}/>
 
             <Button name={'SET'}
                     callback={setCountAllFunc}
